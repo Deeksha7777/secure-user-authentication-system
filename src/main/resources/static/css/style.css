@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.auth-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Button */
+.btn-primary-custom {
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #4338ca;
+}
+
+/* Links */
+.auth-link {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Message */
+.auth-message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+/* Input focus effect */
+.form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Button hover lift */
+.btn-primary-custom {
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* Success & Error styling */
+.success-message {
+    color: #16a34a;
+    font-weight: 500;
+}
+
+.error-message {
+    color: #dc2626;
+    font-weight: 500;
+}
