@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+    <span class="navbar-brand fw-bold">Auth System</span>
+
+    <div class="ms-auto d-flex align-items-center text-white">
+        <span class="me-3">Welcome, <strong th:text="${username}"></strong></span>
+        <form action="/logout" method="post">
+            <button class="btn btn-sm btn-outline-light">Logout</button>
+        </form>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+
+    <div class="row g-4">
+
+        <!-- TOTAL LOGINS CARD -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Total Logins</h6>
+                    <h1 class="display-5 fw-bold text-primary"
+                        th:text="${loginCount}">
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN HISTORY CARD -->
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+
+                    <h6 class="text-muted mb-3">Login History</h6>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Login Time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="activity, stat : ${activities}">
+                                <td th:text="${stat.index + 1}"></td>
+                                <td th:text="${#temporals.format(activity.loginTime, 'dd MMM yyyy HH:mm:ss')}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
